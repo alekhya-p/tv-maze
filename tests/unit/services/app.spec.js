@@ -1,12 +1,12 @@
-import { shallowMount, createLocalVue } from '@vue/test-utils';
+import { shallowMount, createLocalVue } from "@vue/test-utils";
 
-import VueRouter from 'vue-router';
-import app from '@/App.vue';
+import VueRouter from "vue-router";
+import app from "@/App.vue";
 import Navbar from "@/components/Navbar.vue";
 
-describe('app.vue', () => {
+describe("app.vue", () => {
   let appWrapper;
-  const router = new VueRouter({ path: '/', name: 'Home' });
+  const router = new VueRouter({ path: "/", name: "Home" });
   beforeEach(() => {
     const localVue = createLocalVue();
     localVue.use(VueRouter);
@@ -20,7 +20,7 @@ describe('app.vue', () => {
   afterEach(() => {
     appWrapper.destroy();
   });
-  it('is a Vue instance', () => {
+  it("is a Vue instance", () => {
     expect(appWrapper.isVueInstance).toBeTruthy();
   });
   it("renders the correct markup", () => {
@@ -34,12 +34,11 @@ describe('app.vue', () => {
       '<router-view-stub name="default"></router-view-stub>'
     );
   });
-  it('it should load navbar', () => {
+  it("it should load navbar", () => {
     expect(Navbar).toBeTruthy();
   });
 
- // it('it should have navbar-stub', () => {
-   // expect(appWrapper.html()).toContain('<navbar-stub>');
+  // it('it should have navbar-stub', () => {
+  // expect(appWrapper.html()).toContain('<navbar-stub>');
   //});
-
 });
