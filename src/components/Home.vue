@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Navbar />
     <div class="container">
         <div class="row">
           <div class="heading">Popular Shows</div>
@@ -9,10 +8,10 @@
               class="tvShow col-lg-3 col-md-4 col-sm-6" v-for="shows in popularShows" :key="shows.id"
             >
               <div class="movies">
-                <img class="images" :src="shows.image.original" width="200" height="300" hspace="5" @click="goToTvDetails(shows.id)"/>
+                <img class="popularImage" :src="shows.image.original" width="200" height="300" hspace="5" @click="goToTvDetails(shows.id)"/>
                 <div>
                   <span>
-                    <b-icon icon="star-fill" class="star-icon"></b-icon>
+                    <b-icon icon="star-fill" class="popularStar"></b-icon>
                   </span>
                   <span class="show-rating">
                     {{ shows.rating.average }}
@@ -61,13 +60,9 @@
 
 <script>
 import { getAllShows } from "@/services/api";
-import Navbar from "./Navbar.vue";
 
 export default {
   name: "Home",
-  components: {
-    Navbar,
-  },
   data() {
     return {
       allShows: [],
@@ -76,7 +71,6 @@ export default {
       uniqueGenres: [],
     };
   },
-
   mounted() {
     this.getAllTvShows();
   },
@@ -110,8 +104,19 @@ export default {
 };
 </script>
 <style scoped>
+.popularStar{
+  color:yellow
+}
+.spinner-border {
+  width: 65px;
+  height: 65px;
+  margin-top: 120px;
+}
+.popularImage{
+  border:4px solid green;
+  margin-top: 10px;
+}
 img {
-  padding-top: 10px;
   cursor: pointer;
   border-radius:1%;
 }

@@ -1,9 +1,8 @@
 <template>
   <div>
-    <nav class="navbar navbar-dark bg-info">
+    <nav class="navbar navbar-dark bg-dark">
     <div class="container-fluid">
       <router-link class="nav-link" :to="{name: 'Home'}">
-                <b-icon icon="camera-reels" class="navbar-icon"></b-icon>
                 MOVIECOOL
       </router-link>
     <form class="d-flex">
@@ -37,10 +36,13 @@ export default {
 };
 </script>
 <style scoped>
+.nav-link {
+  color: rgb(153, 214, 129);
+}
 .navbar-icon{
   color:black;
 }
 .btn{
-  color: rgb(16, 38, 236);
+  color: rgb(99, 192, 127);
 }
 </style>

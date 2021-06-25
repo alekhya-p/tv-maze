@@ -11,14 +11,12 @@
                             height="300" 
                             v-if="eachShow.show.image"
                             @click="goToTvDetails(eachShow.show.id)">
-                        <div v-else style="margin-left: 60px">
+                        <div v-else>
                             <img
-                            class="card"
+                            :src="images.sample"
                             width="200"
                             height="300"
-                            alt="Image"
-                            @click="goToTvDetails(eachShow.show.id)"
-                            />
+                            @click="goToTvDetails(eachShow.show.id)">
                     </div>    
                     </div>
                     <p class="showName">{{ eachShow.show.name }}</p>
@@ -39,6 +37,9 @@ export default {
         return {
             searchCheck :true,
             searchShows: [],
+            images: {
+                sample: require('../assets/defaultImage.jpg')
+            }
         };
     },
     props: ["query"],

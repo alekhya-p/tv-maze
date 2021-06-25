@@ -3,15 +3,19 @@
     <div v-if="detailsCheck">
             <div class="container">
             <h2 class="heading">Movie Details</h2>
-            <div class="left">
+            <div class="img">
                 <img class="image" :src="details.image.original" height = "300" width="300" >
             </div>
-            <div class="right">
-                <div class="details">
+            <div class="showDetails">
+                <div class="details" v-if="details.name">
                     <b>Name: {{details.name}}</b>
                 </div>
+                <span class="details" v-else>Not Available</span>
                 <div class="details">
                     <b>Language: {{details.language}}</b>
+                </div>
+                <div class="details">
+                    <b>Status: {{details.status}}</b>
                 </div>
                 <div class="details">
                     <b>Genres: {{details.genres}}</b>
@@ -60,7 +64,7 @@ export default {
     font-family: "Lucida Console", "Courier New", monospace;
     font-size: 30px;
     color: black;
-    font-weight: bold;
+    font-weight:bolder;
 }
 
 .details{

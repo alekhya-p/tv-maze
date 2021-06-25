@@ -30,7 +30,7 @@ const routes = [
     path:'/:catchAll(.*)',
     name:"NotFound",
     component: PageNotFound,
-  }
+  },
 ]
 
 const router = new VueRouter({
