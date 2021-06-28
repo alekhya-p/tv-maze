@@ -194,7 +194,31 @@
 <a name='L136'></a><a href='#L136'>136</a>
 <a name='L137'></a><a href='#L137'>137</a>
 <a name='L138'></a><a href='#L138'>138</a>
-<a name='L139'></a><a href='#L139'>139</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -284,6 +308,8 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -335,59 +361,70 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
   &lt;div&gt;
     &lt;div class="container"&gt;
-        &lt;div class="row"&gt;
-          &lt;div class="heading"&gt;Popular Shows&lt;/div&gt;
-          &lt;div class="scroll"&gt;
-            &lt;div
-              class="tvShow col-lg-3 col-md-4 col-sm-6" v-for="shows in popularShows" :key="shows.id"
-            &gt;
-              &lt;div class="movies"&gt;
-                &lt;img class="popularImage" :src="shows.image.original" width="200" height="300" hspace="5" @click="goToTvDetails(shows.id)"/&gt;
-                &lt;div&gt;
-                  &lt;span&gt;
-                    &lt;b-icon icon="star-fill" class="popularStar"&gt;&lt;/b-icon&gt;
-                  &lt;/span&gt;
-                  &lt;span class="show-rating"&gt;
-                    {{ shows.rating.average }}
-                  &lt;/span&gt;
-                &lt;/div&gt;
-                &lt;p class="showName"&gt;{{ shows.name }}&lt;/p&gt;
-              &lt;/div&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;!-- Categories --&gt;
-        &lt;div
-          class="tvShowLists row"
-          v-for="itemList in categories"
-          :key="itemList.id"
-        &gt;
-          &lt;p class="heading"&gt;{{ itemList.name }}&lt;/p&gt;
-&nbsp;
-          &lt;div class="scroll"&gt;
-            &lt;div
-              class="col-lg-3 col-md-4 col-sm-6"
-              v-for="showGenres in itemList.filterShows" :key="showGenres.id"
-            &gt;
+      &lt;div class="row"&gt;
+        &lt;div class="heading"&gt;Popular Shows&lt;/div&gt;
+        &lt;div class="scroll"&gt;
+          &lt;div
+            class="tvShow col-lg-3 col-md-4 col-sm-6"
+            v-for="shows in popularShows"
+            :key="shows.id"
+          &gt;
+            &lt;div class="movies"&gt;
               &lt;img
-                id="images" :src="showGenres.image.medium"
+                class="popularImage"
+                :src="shows.image.original"
                 width="200"
                 height="300"
                 hspace="5"
-                @click="goToTvDetails(show.id)"
+                @click="goToTvDetails(shows.id)"
               /&gt;
               &lt;div&gt;
                 &lt;span&gt;
-                  &lt;b-icon icon="star-fill" class="star-icon"&gt;&lt;/b-icon&gt;
+                  &lt;b-icon icon="star-fill" class="popularStar"&gt;&lt;/b-icon&gt;
                 &lt;/span&gt;
                 &lt;span class="show-rating"&gt;
-                  {{ showGenres.rating.average }}
+                  {{ shows.rating.average }}
                 &lt;/span&gt;
               &lt;/div&gt;
-              &lt;p class="showName"&gt;{{ showGenres.name }}&lt;/p&gt;
+              &lt;p class="showName"&gt;{{ shows.name }}&lt;/p&gt;
             &lt;/div&gt;
           &lt;/div&gt;
         &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;!-- Categories --&gt;
+      &lt;div
+        class="tvShowLists row"
+        v-for="itemList in categories"
+        :key="itemList.id"
+      &gt;
+        &lt;p class="heading"&gt;{{ itemList.name }}&lt;/p&gt;
+&nbsp;
+        &lt;div class="scroll"&gt;
+          &lt;div
+            class="col-lg-3 col-md-4 col-sm-6"
+            v-for="showGenres in itemList.filterShows"
+            :key="showGenres.id"
+          &gt;
+            &lt;img
+              id="images"
+              :src="showGenres.image.medium"
+              width="200"
+              height="300"
+              hspace="5"
+              @click="goToTvDetails(show.id)"
+            /&gt;
+            &lt;div&gt;
+              &lt;span&gt;
+                &lt;b-icon icon="star-fill" class="star-icon"&gt;&lt;/b-icon&gt;
+              &lt;/span&gt;
+              &lt;span class="show-rating"&gt;
+                {{ showGenres.rating.average }}
+              &lt;/span&gt;
+            &lt;/div&gt;
+            &lt;p class="showName"&gt;{{ showGenres.name }}&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/template&gt;
@@ -413,24 +450,26 @@ export default {
     getAllTvShows() {
       getAllShows().then((res) =&gt; {
         this.allShows = res.data;
-          this.allShows.forEach((showsList) =&gt; {
-<span class="missing-if-branch" title="if path not taken" >I</span>            if (showsList.rating.average &gt;= 9) {
-<span class="cstat-no" title="statement not covered" >              this.popularShows.push(showsList);</span>
-            }
-          });
-          const allGenres = this.allShows.map(show =&gt; show.genres).flat();
-          this.uniqueGenres = [...new Set(allGenres)];
-           this.categories = this.uniqueGenres.map((genre) =&gt; {
-             const filterShows = this.allShows.filter((show) =&gt; show.genres.includes(genre))
-              return  {name: genre, filterShows};
-           });
+        this.allShows.forEach((showsList) =&gt; {
+<span class="missing-if-branch" title="if path not taken" >I</span>          if (showsList.rating.average &gt;= 9) {
+<span class="cstat-no" title="statement not covered" >            this.popularShows.push(showsList);</span>
+          }
+        });
+        const allGenres = this.allShows.map((show) =&gt; show.genres).flat();
+        this.uniqueGenres = [...new Set(allGenres)];
+        this.categories = this.uniqueGenres.map((genre) =&gt; {
+          const filterShows = this.allShows.filter((show) =&gt;
+            show.genres.includes(genre)
+          );
+          return { name: genre, filterShows };
+        });
       });
     },
     goToTvDetails(id) {
       this.$router.push({
         name: "Details",
         params: {
-           id,
+          id,
         },
       });
     },
@@ -438,21 +477,21 @@ export default {
 };
 &lt;/script&gt;
 &lt;style scoped&gt;
-.popularStar{
-  color:yellow
+.popularStar {
+  color: yellow;
 }
 .spinner-border {
   width: 65px;
   height: 65px;
   margin-top: 120px;
 }
-.popularImage{
-  border:4px solid green;
+.popularImage {
+  border: 4px solid green;
   margin-top: 10px;
 }
 img {
   cursor: pointer;
-  border-radius:1%;
+  border-radius: 1%;
 }
 .heading {
   font-family: "Lucida Console", "Courier New", monospace;
@@ -467,7 +506,7 @@ img {
 }
 .scroll {
   display: flex;
-  overflow-x:auto ;
+  overflow-x: auto;
 }
 &lt;/style&gt;
 &nbsp;</pre></td></tr></table></pre>
@@ -477,7 +516,7 @@ img {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Jun 25 2021 16:36:35 GMT+0530 (India Standard Time)
+                at Mon Jun 28 2021 14:33:26 GMT+0530 (India Standard Time)
             </div>
         </div>
         <script src="..\..\prettify.js"></script>

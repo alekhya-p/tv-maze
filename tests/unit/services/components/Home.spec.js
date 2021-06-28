@@ -87,12 +87,6 @@ describe("Home.vue", () => {
   it("is a Vue instance", () => {
     expect(wrapper.isVueInstance).toBeTruthy();
   });
-  //  it('Should call DetailsPage when image is clicked', () => {
-  //    wrapper.vm.goToTvDetails = jest.fn();
-  //    wrapper.find('img').trigger('click')
-  //    expect(wrapper.vm.$router.name).toBe("Details");
-  // })
-
   it("Testing the router", () => {
     wrapper.vm.goToTvDetails(1);
     expect(wrapper.vm.$route.name).toBe("Details");

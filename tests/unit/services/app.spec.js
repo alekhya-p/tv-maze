@@ -37,8 +37,4 @@ describe("app.vue", () => {
   it("it should load navbar", () => {
     expect(Navbar).toBeTruthy();
   });
-
-  // it('it should have navbar-stub', () => {
-  // expect(appWrapper.html()).toContain('<navbar-stub>');
-  //});
 });

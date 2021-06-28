@@ -1,8 +1,11 @@
 <template>
-  <div class="container">
+  <div class="container print">
     <div class="card alert-danger">
       <div class="card-body">
         <h1 class="card-text">{{ errorMessage }}</h1>
+        <b-button pill variant="success" @click="goToHome"
+          >Go To Home Page</b-button
+        >
       </div>
     </div>
   </div>
@@ -15,6 +18,11 @@ export default {
       errorMessage: "Page Not Found",
     };
   },
+  methods: {
+    goToHome() {
+      this.$router.push("/");
+    },
+  },
 };
 </script>
 
@@ -22,6 +30,7 @@ export default {
 .print {
   text-align: center;
   color: white;
-  padding-top: 100px;
+  padding-top: 90px;
+  height: 100vh;
 }
 </style>

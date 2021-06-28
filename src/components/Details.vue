@@ -6,10 +6,14 @@
         <div class="img">
           <img
             class="image"
-            :src="details.image.original"
+            :src="details.image ? details.image.original : ''"
             height="300"
             width="300"
+            v-if="details.image"
           />
+          <div v-else>
+            <img :src="images.sample" width="300" height="300" />
+          </div>
         </div>
         <div class="showDetails">
           <div class="details" v-if="details.name">
@@ -45,6 +49,9 @@ export default {
     return {
       details: [],
       detailsCheck: true,
+      images: {
+        sample: require("../assets/defaultImage.png"),
+      },
     };
   },
 

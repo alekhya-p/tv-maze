@@ -43,7 +43,7 @@ export default {
       searchCheck: true,
       searchShows: [],
       images: {
-        sample: require("../assets/defaultImage.jpg"),
+        sample: require("../assets/defaultImage.png"),
       },
     };
   },
